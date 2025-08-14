@@ -36,54 +36,26 @@
 
     /* XXXXXXXXXXXXXXXXXXXXXXXXXX-- Slider Css Start --XXXXXXXXXXXXXXXXXXXXXXXXXXX */
     .carousel-item {
-      height: 100vh;
-      min-height: 400px;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      position: relative;
-    }
-    /* Overlay effect */
-    .carousel-item::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.4);
-    }
-    /* Content styling */
-    .carousel-caption {
-      z-index: 2;
-    }
-    .slider_content p{
-      font-size: 20px;
-      color: #fff;
-      font-weight: 600;
-    }
-    .slider_content h1{
-      font-size: 45px;
-      color: #fff;
-      font-weight: 900;
-      text-transform: uppercase;
-    }
-    .btn1{
-      color: #fff;
-      background-color: #F26522;
-      border-radius: 40px;
-      padding: 16px 30px !important;
-      margin-right: 10px;
-
-    }
-    .btn2{
-      color: #000000;
-      background-color: #ffffff;
-      border-radius: 40px;
-      padding: 16px 30px !important;
-      margin-left: 10px;
-
-    }
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  .carousel-caption {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 5%;
+    max-width: 600px;
+    text-align: left;
+    opacity: 1;
+    transition: opacity 0.8s ease-in-out;
+  }
+  .carousel-caption.fade-out {
+    opacity: 0;
+  }
+  .btn1 { background-color: #ff5722; border: none; }
+  .btn2 { background-color: #2196f3; border: none; }
 /* XXXXXXXXXXXXXXXXXXXXXX-- Slider Css End --XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
 
 .timeline {
@@ -258,50 +230,64 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
 -- -- -- -- -- -- -- --  Slider Code Start - -- -- -- -- -- --
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
 
-<div id="bgCarousel" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner slider_content">
+<div id="bgCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+  <div class="carousel-inner slider_content">
 
-      <div class="carousel-item active" style="background-image: url('image/bg11.jpg');">
-        <div class="carousel-caption text-start">
-          <p>Making Best Future</p>
-          <h1>Help Rescue Child</h1>
-          <p>We provides always our best services for our students and  always.<br> try to achieve making a bright successful future.</p>
-          <a href="#" class="btn btn-primary btn1">Donate Now</a>
-          <a href="#" class="btn btn-primary btn2">Read More</a>
-        </div>
+    <div class="carousel-item active" style="background-image: url('image/bg11.jpg');">
+      <div class="carousel-caption">
+        <p>Making Best Future</p>
+        <h1>Help Rescue Child</h1>
+        <p>We provides always our best services for our students and always.<br>Try to achieve making a bright successful future.</p>
+        <a href="#" class="btn btn-primary btn1">Donate Now</a>
+        <a href="#" class="btn btn-primary btn2">Read More</a>
       </div>
-
-      <div class="carousel-item" style="background-image: url('image/bg12.jpg');">
-        <div class="carousel-caption text-start">
-          <p>Start Learning For</p>
-          <h1>Successful Future</h1>
-          <p>We provides always our best services for our students and  always <br>  try to achieve making a bright successful future.</p>
-          <a href="#" class="btn btn-primary btn2">Donate Now</a>
-          <a href="#" class="btn btn-primary btn1">Register Now</a>
-        </div>
-      </div>
-
-      <div class="carousel-item" style="background-image: url('image/bg13.jpg');">
-        <div class="carousel-caption text-start">
-          <p>Join Today for Start</p>
-          <h1>Help Poor People</h1>
-          <p>We provides always our best services for our students and  always <br>try to achieve making a bright successful future.</p>
-          <a href="#" class="btn btn-primary btn1">Start Now</a>
-          <a href="#" class="btn btn-primary btn2">Donate Now</a>
-        </div>
-      </div>
-
     </div>
 
-    <!-- Controls -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#bgCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#bgCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon"></span>
-    </button>
+    <div class="carousel-item" style="background-image: url('image/bg12.jpg');">
+      <div class="carousel-caption">
+        <p>Start Learning For</p>
+        <h1>Successful Future</h1>
+        <p>We provides always our best services for our students and always<br>Try to achieve making a bright successful future.</p>
+        <a href="#" class="btn btn-primary btn2">Donate Now</a>
+        <a href="#" class="btn btn-primary btn1">Register Now</a>
+      </div>
+    </div>
+
+    <div class="carousel-item" style="background-image: url('image/bg13.jpg');">
+      <div class="carousel-caption">
+        <p>Join Today for Start</p>
+        <h1>Help Poor People</h1>
+        <p>We provides always our best services for our students and always<br>Try to achieve making a bright successful future.</p>
+        <a href="#" class="btn btn-primary btn1">Start Now</a>
+        <a href="#" class="btn btn-primary btn2">Donate Now</a>
+      </div>
+    </div>
 
   </div>
+
+  <!-- Controls -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#bgCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#bgCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  const carousel = document.getElementById('bgCarousel');
+
+  carousel.addEventListener('slide.bs.carousel', function (event) {
+    const activeCaption = event.relatedTarget.querySelector('.carousel-caption');
+    document.querySelectorAll('.carousel-caption').forEach(caption => {
+      caption.classList.add('fade-out');
+    });
+    setTimeout(() => {
+      activeCaption.classList.remove('fade-out');
+    }, 800); // image slide duration match
+  });
+</script>
 
 <!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 -- -- -- -- -- -- -- --  Slider Code End  -- -- -- -- -- -- --
