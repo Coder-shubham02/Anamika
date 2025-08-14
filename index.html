@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navbar Fix</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<style>
+  html, body {
+      height: 100%;
+      margin: 0;
+    }
+    .active1{
+    color: white !important;
+    background-color: #48CFAD !important;
+    font-weight: 900;
+    border-radius: 40px;
+    padding: 10px 25px !important;
+  }
+  #header-nav-links li a{
+    font-weight: 600 !important;
+  }
+
+  .carousel,
+    .carousel-item,
+    .carousel-item img {
+      height: 100vh;
+    }
+    .carousel-item img {
+      object-fit: cover;
+    }
+
+    /* XXXXXXXXXXXXXXXXXXXXXXXXXX-- Slider Css Start --XXXXXXXXXXXXXXXXXXXXXXXXXXX */
+    .carousel-item {
+      height: 100vh;
+      min-height: 400px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
+    }
+    /* Overlay effect */
+    .carousel-item::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.4);
+    }
+    /* Content styling */
+    .carousel-caption {
+      z-index: 2;
+    }
+    .slider_content p{
+      font-size: 20px;
+      color: #fff;
+      font-weight: 600;
+    }
+    .slider_content h1{
+      font-size: 45px;
+      color: #fff;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+    .btn1{
+      color: #fff;
+      background-color: #F26522;
+      border-radius: 40px;
+      padding: 16px 30px !important;
+      margin-right: 10px;
+
+    }
+    .btn2{
+      color: #000000;
+      background-color: #ffffff;
+      border-radius: 40px;
+      padding: 16px 30px !important;
+      margin-left: 10px;
+
+    }
+/* XXXXXXXXXXXXXXXXXXXXXX-- Slider Css End --XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
+
+.timeline {
+      position: relative;
+      padding: 2rem 0;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: #ddd;
+      transform: translateX(-50%);
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 3rem;
+    }
+    .timeline-year-circle {
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #0d6efd;
+      color: #fff;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      z-index: 2;
+      font-size: 1.2rem;
+    }
+    .timeline-dot {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #fff;
+      border: 3px solid #0d6efd;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      z-index: 1;
+    }
+    .timeline-content {
+      padding: 1rem;
+      border-radius: 0.5rem;
+      background: #f8f9fa;
+      position: relative;
+      width: 45%;
+    }
+    .timeline-item-left .timeline-content {
+      margin-right: auto;
+    }
+    .timeline-item-right .timeline-content {
+      margin-left: auto;
+    }
+    @media (max-width: 768px) {
+      .timeline::before {
+        left: 10px;
+      }
+      .timeline-year-circle {
+        left: 10px;
+        transform: translateY(-50%);
+      }
+      .timeline-dot {
+        left: 10px;
+        transform: none;
+      }
+      .timeline-content {
+        width: calc(100% - 40px);
+        margin: 0 0 0 40px;
+      }
+    }
+</style>
+<!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+-- -- -- -- -- -- -- -- Header code Start -- -- -- -- -- -- --
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
+<header class="header-wrapper sticky-top bg-light py-2">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" href="index.html">
+        <img src="image/logo-wide.png" alt="Brand logo" style="margin-top:20px;" loading="lazy">
+      </a>
+
+      <!-- Toggler Button -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Collapsible Menu -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto" id="header-nav-links">
+          <li class="nav-item dropdown home_active">
+            <a class="nav-link dropdown-toggle active1" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Home
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="homeDropdown">
+                <li><a class="dropdown-item" href="#">Index-mp-layout1</a></li>
+                <li><a class="dropdown-item" href="#">Index-mp-layout2</a></li>
+                <li><a class="dropdown-item" href="#">Index-mp-layout3</a></li>
+                <li><a class="dropdown-item" href="#">Index-mp-layout4</a></li>
+                <li><a class="dropdown-item" href="#">Index-mp-layout5</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="menuDropdown" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    Pages
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="menuDropdown">
+                    <li><a class="dropdown-item" href="about.html">About</a></li>
+                    <li><a class="dropdown-item" href="#">Services</a></li>
+                </ul>
+            </li>
+
+            <!-- Causes -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="donate.html" id="eventsDropdown" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    Donate
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="eventsDropdown">
+                    <li><a class="dropdown-item" href="#">Causes Gird</a></li>
+                    <li><a class="dropdown-item" href="#">Causes Craousal</a></li>
+                </ul>
+            </li>
+
+            <!-- Blog -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="picturesDropdown" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    Blog
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="picturesDropdown">
+                    <li><a class="dropdown-item" href="#">News Grid</a></li>
+                    <li><a class="dropdown-item" href="#">News Details</a></li>
+                </ul>
+            </li>
+
+            <!-- About -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="about.html" id="aboutDropdown" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    About
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                    <li><a class="dropdown-item" href="about.html">About Us</a></li>
+                    <li><a class="dropdown-item" href="#">Our Team</a></li>
+                </ul>
+            </li>
+
+            <!-- Contact -->
+            <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+-- -- -- -- -- -- -- -- - Header code End -- -- -- -- -- -- --
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
+
+<!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+-- -- -- -- -- -- -- --  Slider Code Start - -- -- -- -- -- --
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
+
+<div id="bgCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner slider_content">
+
+      <div class="carousel-item active" style="background-image: url('image/bg11.jpg');">
+        <div class="carousel-caption text-start">
+          <p>Making Best Future</p>
+          <h1>Help Rescue Child</h1>
+          <p>We provides always our best services for our students and  always.<br> try to achieve making a bright successful future.</p>
+          <a href="#" class="btn btn-primary btn1">Donate Now</a>
+          <a href="#" class="btn btn-primary btn2">Read More</a>
+        </div>
+      </div>
+
+      <div class="carousel-item" style="background-image: url('image/bg12.jpg');">
+        <div class="carousel-caption text-start">
+          <p>Start Learning For</p>
+          <h1>Successful Future</h1>
+          <p>We provides always our best services for our students and  always <br>  try to achieve making a bright successful future.</p>
+          <a href="#" class="btn btn-primary btn2">Donate Now</a>
+          <a href="#" class="btn btn-primary btn1">Register Now</a>
+        </div>
+      </div>
+
+      <div class="carousel-item" style="background-image: url('image/bg13.jpg');">
+        <div class="carousel-caption text-start">
+          <p>Join Today for Start</p>
+          <h1>Help Poor People</h1>
+          <p>We provides always our best services for our students and  always <br>try to achieve making a bright successful future.</p>
+          <a href="#" class="btn btn-primary btn1">Start Now</a>
+          <a href="#" class="btn btn-primary btn2">Donate Now</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#bgCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#bgCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+
+  </div>
+
+<!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+-- -- -- -- -- -- -- --  Slider Code End  -- -- -- -- -- -- --
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
+
+<div class="container py-5">
+  <div class="timeline">
+
+    <!-- Year circle only -->
+    <div class="timeline-item">
+      <div class="timeline-year-circle">2007</div>
+    </div>
+
+    <!-- Item -->
+    <div class="timeline-item timeline-item-right">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h5 class="mb-1">October, 2009</h5>
+        <h6>It’s all started</h6>
+        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Ut elit tellus luctus nec ullamcorper.</p>
+      </div>
+    </div>
+
+    <!-- Item -->
+    <div class="timeline-item timeline-item-left">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h5 class="mb-1">January, 2011</h5>
+        <h6>Started NGO as a social enterprise</h6>
+        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Ut elit tellus luctus nec ullamcorper.</p>
+      </div>
+    </div>
+
+    <!-- Year circle -->
+    <div class="timeline-item">
+      <div class="timeline-year-circle">2013</div>
+    </div>
+
+    <!-- Item -->
+    <div class="timeline-item timeline-item-left">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h5 class="mb-1">March, 2018</h5>
+        <h6>20th anniversary of helping children</h6>
+        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Ut elit tellus luctus nec ullamcorper.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Bootstrap Bundle JS (Popper included) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
